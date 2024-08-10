@@ -1,0 +1,94 @@
+/* 전체 레이아웃 */
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* 필드셋 및 범례 */
+fieldset {
+    width: 400px;
+    height: 430px;
+    border-color: #cccc46;
+}
+
+legend {
+    margin-left: 30px;
+}
+
+/* 퀴즈 컨테이너 */
+#quiz-container {
+    padding: 0 20px 20px;
+}
+
+/* 안내 문구 */
+#guide {
+    color: gray;
+}
+
+/* 이름 입력 */
+#name-input {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#name {
+    width: 80px;
+    font-size: 15px;
+    padding: 2px;
+}
+
+/* 퀴즈 항목 */
+.quiz-item {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 3px;
+}
+
+/* 버튼 */
+button {
+    display: block;
+    width: 70px;
+    margin: 30px auto auto;
+}
+
+/* 결과 알림 */
+#notice-div {
+    width: 420px;
+    height: 372px;
+    border: 2px groove #cccc46;
+    margin-top: 42px;
+    padding: 35px 0 0 35px;
+    visibility: hidden;
+    color: gray;
+}
+
+/* 정답/오답 스타일 */
+.wrong-answer {
+    background-color: red;
+    color: white;
+}
+
+.right-answer {
+    background-color: #ececec;
+}
+
+/* 점수 표시 */
+span {
+    color: gray;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#mySpanId {
+    color: red;
+    margin-right: 0;
+    font-size: 20px;
+}

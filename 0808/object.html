@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>JavaScript Object</h1>
+  <p>
+    <button type="button" onclick="bgChange(this)">RED</button>&nbsp;&nbsp;
+    <button type="button" onclick="bgChange(this)">BLUE</button>
+  </p>
+  <script>
+      function bgChange(e) {
+          console.log(e.innerHTML);
+          document.body.style.backgroundColor = e.innerHTML.toLowerCase();
+      }
+
+      const car = {name: 'Sonata'};
+      console.log(car.name);
+      car.price = 30000000;
+      console.log(car.price);
+      let Student = function (irum, ko, en, math) {
+          let name = irum;
+          let kor = ko;
+          let eng = en;
+          let mat = math;
+          this.getName = function () {
+              return name;
+          }
+      }
+      let chulsu = new Student('김철수', 78, 90, 100);
+      console.log(chulsu.name);
+      console.log(chulsu.getName());
+      let Singer = function (n, a, s) {
+          let name = n;
+          let age = a;
+          let song = s;
+          this.getName = function () {
+              return name;
+          }
+          this.setName = function (n) {
+              name = n;
+          }
+      }
+
+      let yerin = new Singer('백예린', 27, '0310');
+      console.log(yerin.getName());
+      yerin.setName('천예린');
+      console.log(yerin.getName());
+
+      let now = new Date(2024, 7, 8, 12, 0, 0);
+      console.log(now.toLocaleString());
+
+      if (3 === "3") {
+          console.log('같다.');
+      } else {
+          console.log('다르다.');
+      }
+      let arrays = [4, 7, 1, 2, 3, 8, 0];
+      arrays.sort(myCompare);
+
+      function myCompare(a, b) {
+          return b - a;
+      }
+
+      /*
+        arrays.sort((a, b) => {
+            b - a
+        });
+      */
+      console.log(arrays);
+  </script>
+</body>
+</html>

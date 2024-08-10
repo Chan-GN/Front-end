@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Exam ■■■</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend><h1>계산 퀴즈</h1></legend>
+      <div id="quiz-container">
+        <p id="guide">이름과 계산의 답을 입력한 후 완료 버튼을 눌러주세요.</p>
+        <div id="name-input">
+          <label for="name">이름: </label>
+          <input type="text" id="name">
+        </div>
+        <div class="quiz-item">
+          <label for="ans1"><span>1. </span> 5 + 6 =</label>
+          <input type="number" id="ans1">
+        </div>
+        <div class="quiz-item">
+          <label for="ans2"><span>2. </span> 8 - 3 =</label>
+          <input type="number" id="ans2">
+        </div>
+        <div class="quiz-item">
+          <label for="ans3"><span>3. </span> 7 × 6 =</label>
+          <input type="number" id="ans3">
+        </div>
+        <div class="quiz-item">
+          <label for="ans4"><span>4. </span> 15 ÷ 3 =</label>
+          <input type="number" id="ans4">
+        </div>
+        <div class="quiz-item">
+          <label for="ans5"><span>5. </span> 8 + 6 - 3 × 2 ÷ 2 =</label>
+          <input type="number" id="ans5">
+        </div>
+        <button type="submit">완료</button>
+      </div>
+    </fieldset>
+  </form>
+  <div id="notice-div">
+    <p id="notice-info"></p>
+    <p>틀린 답은 빨간색으로 표시 하였습니다.</p>
+    <p id="notice-score"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

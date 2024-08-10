@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Form & Event Ⅱ</h1>
+  <form id="myform">
+    <p>Gender:
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">남성</label>
+
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">여성</label>
+    </p>
+    <p>
+      <input type="checkbox" id="fishing" name="hobby" value="낚시">
+      <label for="fishing">낚시</label>
+      <input type="checkbox" id="hiking" name="hobby" value="등산">
+      <label for="hiking">등산</label>
+      <input type="checkbox" id="baduk" name="hobby" value="바둑">
+      <label for="baduk">바둑</label>
+      <input type="checkbox" id="flower-arranging" name="hobby" value="꽃꽂이">
+      <label for="flower-arranging">꽃꽂이</label>
+      <input type="checkbox" id="gaming" name="hobby" value="게임">
+      <label for="gaming">게임</label>
+      <input type="checkbox" id="reading" name="hobby" value="독서">
+      <label for="reading">독서</label></p>
+    <p>
+      <button type="button">Click Me!</button>
+    </p>
+  </form>
+  <script>
+      const button = document.querySelector('button');
+      button.addEventListener('click', () => {
+          const selectedGender = document.querySelector('input[name="gender"]:checked')
+          if (selectedGender) {
+              let genderInKorean;
+
+              if (selectedGender.value === 'male') {
+                  genderInKorean = '남성';
+              } else if (selectedGender.value === 'female') {
+                  genderInKorean = '여성';
+              }
+
+              console.log(genderInKorean);
+          } else {
+              console.log('성별이 선택되지 않았습니다.');
+          }
+
+          const selectedHobbies = document.querySelectorAll('input[name="hobby"]:checked');
+
+          const hobbyList = [];
+
+          selectedHobbies.forEach((hobby) => {
+              hobbyList.push(hobby.value);
+          });
+
+          const result = hobbyList.join(', ');
+
+          if (result) console.log(result);
+          else console.log('취미가 선택되지 않았습니다.')
+      }, false);
+  </script>
+</body>
+</html>

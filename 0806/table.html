@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Practice using table tag</h1>
+  <table align="center" width="600" cellspacing="0" cellpadding="10" border="1">
+    <colgroup>
+      <col span="2" style="background-color: aqua;"/>
+      <col style="background-color: magenta;"/>
+    </colgroup>
+    <caption align="bottom">7월, 8월 그리고 9월 수업시간표</caption>
+    <thead>
+    <tr style="background-color: yellow;" height="200">
+      <th width="200">수업날짜</th>
+      <th width="200">과목명</th>
+      <th width="200">비고</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td align="center" rowspan="3">7월</td>
+      <td>Core-Java & MySQL</td>
+      <td rowspan="2">JDBC 추가</td>
+    </tr>
+    <tr>
+      <td>HTML5, CSS3, JavaScript, React</td>
+    </tr>
+    <tr>
+      <td>Spring & Spring Boot</td>
+      <td bgcolor="green">MyBatis & JPA 추가</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td align="right">합계:</td>
+      <td colspan="2">8과목</td>
+    </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

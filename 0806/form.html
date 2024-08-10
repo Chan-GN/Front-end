@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Practice using form tag</h1>
+  <form name="my-form" id="my-form">
+    <fieldset style="width: fit-content">
+      <legend>Basic Info</legend>
+      <p>
+        <label for="username">Name : </label>
+        <input type="text" size="5" id="username" name="username" value="백예린"/>
+      </p>
+      <p>
+        <label for="user-age">Age : </label>
+        <input type="number" id="user-age" max="60"/>
+      </p>
+      <p>
+        <span>Gender: </span>
+        <input type="radio" id="male" name="gender" value="male" checked/>
+        <label for="male">남성</label>&nbsp;&nbsp;
+        <input type="radio" id="female" name="gender" value="female"/>
+        <label for="female">여성</label>
+      </p>
+    </fieldset>
+    <fieldset style="width: fit-content">
+      <legend>Business Info</legend>
+      <p>
+        <label for="userid">ID : </label>
+        <input type="text" size="20" maxlength="12" id="userid" required placeholder="Enter your ID"/></p>
+      <p>
+        <label for="user-pwd">Password : </label>
+        <input type="password" size="20" maxlength="8" id="user-pwd" required/>
+      </p>
+      <p>
+        <label for="user-tel">Telephone : </label>
+        <select name="" id="">
+          <option value="010">-선택-</option>
+          <option value="010">010</option>
+          <option value="011">011</option>
+          <option value="016">016</option>
+          <option value="018">018</option>
+          <option value="019">019</option>
+        </select>
+        <input type="tel" size="8" maxlength="8" id="user-tel"/>
+      </p>
+      <p>
+        <label for="browser">Choose your browser: </label>
+        <input type="text" id="browser" name="browser" list="browsers"/>
+        <datalist id="browsers">
+          <option value="Chrome">
+          <option value="Firefox">
+          <option value="Safari">
+          <option value="Edge">
+          <option value="Opera">
+        </datalist>
+      </p>
+      <p>
+        <label for="date">지원 날짜 : </label>
+        <input type="date" id="date">
+      </p>
+      <p>
+        <label for="image">사진 : </label>
+        <input type="file" id="image">
+      </p>
+      <p>
+        <label for="">Available Languages: </label><br>
+        <input type="checkbox" id="c" name="language" value="C"/>
+        <label for="c">C</label>&nbsp;
+        <input type="checkbox" id="cpp" name="language" value="C++"/>
+        <label for="cpp">C++</label>&nbsp;
+        <input type="checkbox" id="java" name="language" value="Java" checked disabled/>
+        <label for="java">Java</label>&nbsp;
+        <input type="checkbox" id="python" name="language" value="Python"/>
+        <label for="python">Python</label>&nbsp;
+        <input type="checkbox" id="javascript" name="language" value="JavaScript"/>
+        <label for="javascript">JavaScript</label>&nbsp;
+      </p>
+    </fieldset>
+    <p>
+      <label for="motivation">지원 동기 : </label>
+      <textarea name="" id="motivation" cols="30" rows="5" placeholder="1000자 이내..."></textarea>
+    </p>
+    <p>
+      <input type="submit" value="전송">&nbsp;&nbsp;&nbsp;
+      <!-- <input type="reset" value="취소"> -->
+      <button type="reset">취소</button>
+    </p>
+  </form>
+</body>
+</html>

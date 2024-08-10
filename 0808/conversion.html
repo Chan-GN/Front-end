@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+  <style>
+      #non-converted {
+          text-decoration: line-through;
+      }
+  </style>
+</head>
+<body>
+  <h1>Conversion</h1>
+  <p>
+    <label for="user-age">Age : </label>
+    <input type="text" placeholder="나이를 입력해주세요." id="user-age">
+    <button type="button" onclick="showAge()">10년 후 나이는!?</button>
+  </p>
+  <p id="non-converted"></p>
+  <p id="converted"></p>
+  <script>
+      // window.alert("안녕하세요 저는 alert()입니다.");
+      function showAge() {
+          let age = document.getElementById("user-age").value;
+          document.getElementById("non-converted").innerHTML =
+              `당신의 10년 후 나이는 ${age + 10}살 입니다.` // 19를 입력하면 1910 출력
+          document.getElementById("converted").innerHTML =
+              `당신의 10년 후 나이는 ${parseInt(age) + 10}살 입니다.` // 19를 입력하면 1910 출력
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="button"] {
+    padding: 10px;
+    width: 100%;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    visibility: hidden;
+}

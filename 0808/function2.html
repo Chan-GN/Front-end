@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Inner Function & Closure</h1>
+  <script>
+      function outer(greeting) {
+          // return greeting + ', jimin'; // string literal
+          // return 5; // number literal
+          // return false; // boolean literal
+          // return ['Mango', 'Apple']; // array literal
+          // return {name: 'Sonata', price: 30000000}; // object literal
+          return function inner(name) {
+              console.log(`${greeting}, ${name}`);
+          }
+      }
+
+      const result = outer('Hello');
+      result('yerin');
+      result('jinah');
+      const eval = outer('Good Morning');
+      eval('yerin');
+  </script>
+</body>
+</html>

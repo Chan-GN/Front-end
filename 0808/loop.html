@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>JavaScript Loop</h1>
+  <script>
+      let fruits = ['Apple', 'Strawberry', 'Melon', 'Mongo'];
+
+      for (let i = 0; i < fruits.length; i++) {
+          console.log(fruits[i]);
+      }
+      console.log("-----------------------")
+
+      for (let a of fruits) {
+          console.log(a);
+      }
+      console.log("-----------------------")
+
+      fruits.forEach((a) => console.log(a));
+      console.log("-----------------------")
+
+      let car = {name: 'Hyundai', price: 100000000, maker: 'Sonata'};
+
+      for (const key in car) {
+          console.log(`${key}: ${car[key]}`);
+      }
+      console.log("-----------------------")
+
+      for (const property in car) {
+          console.log(property);
+      }
+      console.log("-----------------------")
+  </script>
+</body>
+</html>

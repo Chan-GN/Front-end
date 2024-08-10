@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+  <style>
+      ul {
+          list-style-type: none;
+      }
+
+      ul > li {
+          display: inline;
+      }
+  </style>
+</head>
+<body>
+  <h1>Prevent Default Event</h1>
+  <ul>
+    <li><a href="/" id="apple">Apple</a> |</li>
+    <li><a href="/" id="melon">Melon</a> |</li>
+    <li><a href="/" id="mango">Mango</a></li>
+  </ul>
+  <div id="result">상단의 링크를 클릭해보세요.</div>
+  <script>
+      const links = document.getElementsByTagName('a');
+      for (let i = 0; i < links.length; i++) {
+          links[i].addEventListener('click', (e) => {
+              e.preventDefault();
+              console.log(e.target.id);
+              document.getElementById('result').innerHTML
+                  = `<img src="images/${e.target.id.toLowerCase()}.jpg" alt="">`
+          })
+      }
+  </script>
+</body>
+</html>

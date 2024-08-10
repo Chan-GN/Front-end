@@ -1,0 +1,17 @@
+h1 {
+    color: red;
+    font-family: 궁서, serif;
+    /* text-align: center; */
+    width: 300px;
+    background-color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-family: "Dokdo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+}

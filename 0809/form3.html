@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Form & Event Ⅲ</h1>
+  <form>
+    <p>
+      <label for="browser">Favorite Browser :</label>
+      <select id="browser">
+        <option>-- 선택 --</option>
+        <option value="chrome">Google Chrome</option>
+        <option value="firefox">Mozilla Firefox</option>
+        <option value="safari">Apple Safari</option>
+        <option value="opera">Opera opera</option>
+        <option value="edge">Microsoft Edge</option>
+      </select>
+    </p>
+    <p>
+      <label for="reg-date">Registration Date : </label>
+      <input type="date" id="reg-date"/>
+    </p>
+    <p>
+      <label for="comment"></label>
+      <textarea id="comment" cols="40" rows="7" placeholder="남기실 말씀 좀..."></textarea>
+    </p>
+    <button type="button">Submit</button>
+  </form>
+  <script>
+      const browser = document.querySelector('#browser');
+      const regDate = document.querySelector('#reg-date');
+      const comment = document.querySelector('#comment');
+      document.querySelector('button').addEventListener('click', () => {
+          const selectedBrowser = browser.options[browser.selectedIndex].innerHTML;
+          const regDateValue = regDate.value;
+          const commentValue = comment.value;
+
+          const result = `Your favorite browser is ${selectedBrowser}, your registration date is ${regDateValue}, and your comment is ${commentValue}`
+
+          console.log(result);
+      })
+  </script>
+</body>
+</html>
