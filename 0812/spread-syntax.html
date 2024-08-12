@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Spread Syntax (...)</h1>
+  <div id="output"></div>
+
+  <script>
+      // Function to display results
+      function displayResult(title, result) {
+          const output = document.getElementById('output');
+          output.innerHTML += `<h3>${title}</h3><pre>${JSON.stringify(result, null, 2)}</pre>`;
+      }
+
+      // 1. Spread with arrays
+      const arr1 = [1, 2, 3];
+      const arr2 = [4, 5, 6];
+      const combinedArr = [...arr1, ...arr2];
+      displayResult("Combining arrays", combinedArr);
+
+      // 2. Spread with objects
+      const obj1 = {a: 1, b: 2};
+      const obj2 = {c: 3, d: 4};
+      const combinedObj = {...obj1, ...obj2};
+      displayResult("Combining objects", combinedObj);
+
+      // 3. Spread in function calls
+      function sum(x, y, z) {
+          return x + y + z;
+      }
+
+      const numbers = [1, 2, 3];
+      const result = sum(...numbers);
+      displayResult("Function call with spread", result);
+
+      // 4. Copying an array
+      const originalArray = [1, 2, 3];
+      const copyArray = [...originalArray];
+      displayResult("Copying an array", copyArray);
+
+      // 5. Spread with strings
+      const str = "Hello";
+      const chars = [...str];
+      displayResult("Spreading a string", chars);
+
+      // 6. Rest parameters (using spread in function definition)
+      function myFunc(firstArg, ...restArgs) {
+          return [firstArg, restArgs];
+      }
+
+      const restResult = myFunc(1, 2, 3, 4, 5);
+      displayResult("Rest parameters", restResult);
+
+      // Original function (ES5)
+      function total() {
+          return Array.from(arguments).reduce((acc, item) => acc + item, 0);
+      }
+
+      console.log(total(1, 2, 3)); // Outputs: 6
+
+      // Improved version using ES6 features (Rest parameters)
+      const totalES6 = (...numbers) => numbers.reduce((acc, item) => acc + item, 0);
+      console.log(totalES6(1, 2, 3)); // Outputs: 6
+  </script>
+</body>
+</html>

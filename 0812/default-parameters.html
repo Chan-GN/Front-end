@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          padding: 20px;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      pre {
+          background-color: #f4f4f4;
+          padding: 10px;
+          border-radius: 5px;
+      }
+
+      .output {
+          margin-top: 20px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Default Parameters</h1>
+  <div id="output"></div>
+
+  <script>
+      function displayResult(title, result) {
+          const output = document.getElementById('output');
+          output.innerHTML += `
+                <h3>${title}</h3>
+                <pre>${result}</pre>
+            `;
+      }
+
+      // Example 1: Basic default parameter
+      function greet(name = 'Guest') {
+          return `Hello, ${name}!`;
+      }
+
+      displayResult('Basic default parameter', `
+greet(): ${greet()}
+greet('John'): ${greet('John')}
+        `);
+
+      // Example 2: Multiple default parameters
+      function createUser(name = 'Anonymous', age = 0, isAdmin = false) {
+          return `User: ${name}, Age: ${age}, Admin: ${isAdmin}`;
+      }
+
+      displayResult('Multiple default parameters', `
+createUser(): ${createUser()}
+createUser('Alice'): ${createUser('Alice')}
+createUser('Bob', 30): ${createUser('Bob', 30)}
+createUser('Charlie', 25, true): ${createUser('Charlie', 25, true)}
+        `);
+
+      // Example 3: Default parameters with expressions
+      function getDateTime(date = new Date()) {
+          return date.toLocaleString();
+      }
+
+      displayResult('Default parameters with expressions', `
+getDateTime(): ${getDateTime()}
+getDateTime(new Date('2023-01-01')): ${getDateTime(new Date('2023-01-01'))}
+        `);
+
+      // Example 4: Using previous parameters in default values
+      function calculatePrice(price, tax = price * 0.1) {
+          return price + tax;
+      }
+
+      displayResult('Using previous parameters in default values', `
+calculatePrice(100): ${calculatePrice(100)}
+calculatePrice(100, 20): ${calculatePrice(100, 20)}
+        `);
+
+      // Example 5: Combining with destructuring
+      function printPersonInfo({name = 'Unknown', age = 'N/A'} = {}) {
+          return `Name: ${name}, Age: ${age}`;
+      }
+
+      displayResult('Combining with destructuring', `
+printPersonInfo(): ${printPersonInfo()}
+printPersonInfo({name: 'Alice'}): ${printPersonInfo({name: 'Alice'})}
+printPersonInfo({age: 30}): ${printPersonInfo({age: 30})}
+printPersonInfo({name: 'Bob', age: 25}): ${printPersonInfo({name: 'Bob', age: 25})}
+        `);
+  </script>
+</body>
+</html>

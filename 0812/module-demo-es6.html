@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 모듈 시스템의 문제점과 ES6 해결책</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      h1, h2 {
+          color: #2c3e50;
+      }
+
+      pre {
+          background-color: #f4f4f4;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 15px;
+          overflow-x: auto;
+      }
+
+      code {
+          font-family: 'Courier New', Courier, monospace;
+      }
+  </style>
+</head>
+<body>
+  <h1>JavaScript 모듈 시스템의 문제점과 ES6 해결책</h1>
+
+  <h2>기존 방식의 문제점</h2>
+  <ol>
+    <li>
+      <strong>전역 스코프 오염</strong>:
+      <ul>
+        <li>a.js와 b.js에서 선언된 변수와 함수가 모두 전역 스코프에 노출됩니다.</li>
+        <li>total 변수가 두 파일에서 중복 선언되어 충돌이 발생합니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>의존성 관리의 어려움</strong>:
+      <ul>
+        <li>스크립트 로딩 순서에 따라 결과가 달라질 수 있습니다.</li>
+        <li>현재 a.js가 먼저 로드되어 total이 100으로 설정되지만, 순서가 바뀌면 200이 됩니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>모듈화의 부재</strong>:
+      <ul>
+        <li>각 파일의 코드가 서로 분리되어 있지 않아 캡슐화가 이루어지지 않습니다.</li>
+        <li>다른 파일의 변수나 함수를 의도치 않게 수정할 수 있습니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>코드 재사용성 저하</strong>:
+      <ul>
+        <li>모듈 시스템 없이는 코드를 다른 프로젝트에서 쉽게 재사용하기 어렵습니다.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>ES6의 해결책: 모듈 시스템</h2>
+  <p>ES6에서는 이러한 문제를 해결하기 위해 모듈 시스템을 도입했습니다:</p>
+  <ol>
+    <li>
+      <strong>import와 export 키워드</strong>:
+      <ul>
+        <li>export로 모듈에서 외부로 노출할 변수, 함수, 클래스 등을 지정합니다.</li>
+        <li>import로 다른 모듈에서 선언한 요소를 가져옵니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>모듈 스코프</strong>:
+      <ul>
+        <li>각 모듈은 자체적인 스코프를 가져 전역 스코프 오염을 방지합니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>명시적 의존성</strong>:
+      <ul>
+        <li>모듈 간의 의존성이 코드에 명확히 표시됩니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>정적 구조</strong>:
+      <ul>
+        <li>모듈 구조가 정적이어서 코드 실행 전에 의존성을 분석할 수 있습니다.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>비동기 로딩</strong>:
+      <ul>
+        <li>모듈을 비동기적으로 로드할 수 있어 성능이 향상됩니다.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>예시 코드</h2>
+  <pre><code>// math.js
+export const total = 100;
+
+/*
+    export function getTotal() {
+        return total;
+    }
+*/
+
+function getTotal() {
+    return total;
+}
+
+export {getTotal};
+
+// main.js
+import { total, getTotal } from './math.js';
+console.log(getTotal()); // 100
+
+// HTML
+&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code></pre>
+
+  <p>이 방식을 사용하면 각 모듈이 독립적으로 동작하며, 전역 스코프 오염과 변수 충돌 문제를 해결할 수 있습니다.</p>
+
+  <p>다음 JavaScript 파일들을 확인해보시고, 개발자 도구의 콘솔을 확인해보세요.</p>
+  <ul>
+    <li><a href="modules/math.js">math.js</a></li>
+    <li><a href="modules/main.js">main.js</a></li>
+  </ul>
+  <script type="module" src="modules/math.js"></script>
+  <script type="module" src="modules/main.js"></script>
+</body>
+</html>

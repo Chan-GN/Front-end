@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Arrow Function Expressions</h1>
+  <div id="output"></div>
+
+  <script>
+      // Traditional function
+      function add(a, b) {
+          return a + b;
+      }
+
+      // Arrow function
+      const addArrow = (a, b) => a + b;
+
+      // Arrow function with no parameters
+      const sayHello = () => "Hello, World!";
+
+      // Arrow function with a single parameter
+      const square = x => x * x;
+
+      // Arrow function with block body
+      const greet = name => {
+          const greeting = `Hello, ${name}!`;
+          return greeting;
+      };
+
+      // Using arrow functions with array methods
+      const numbers = [1, 2, 3, 4, 5];
+      const doubled = numbers.map(num => num * 2);
+
+      // Displaying results
+      const output = document.getElementById('output');
+      output.innerHTML = `
+        <p>Traditional function: ${add(5, 3)}</p>
+        <p>Arrow function: ${addArrow(5, 3)}</p>
+        <p>No parameters: ${sayHello()}</p>
+        <p>Single parameter: ${square(4)}</p>
+        <p>With block body: ${greet('John')}</p>
+        <p>Array map: ${doubled.join(', ')}</p>
+        `;
+  </script>
+</body>
+</html>

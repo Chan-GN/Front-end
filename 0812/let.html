@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>let VS var</h1>
+  <p>Open the console to see the results.</p>
+
+  <script>
+      // Using var
+      console.log("Using var:");
+      var x = 1;
+      if (true) {
+          var x = 2;  // same variable!
+          console.log(x);  // 2
+      }
+      console.log(x);  // 2
+
+      // Using let
+      console.log("\nUsing let:");
+      let y = 1;
+      if (true) {
+          let y = 2;  // different variable
+          console.log(y);  // 2
+      }
+      console.log(y);  // 1
+  </script>
+</body>
+</html>

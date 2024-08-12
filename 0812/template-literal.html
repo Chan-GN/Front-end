@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+</head>
+<body>
+  <h1>Template Literals</h1>
+  <div id="output"></div>
+
+  <script>
+      const name = 'John';
+      const age = 30;
+
+      // Using template literals
+      const greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+      // Multi-line string
+      const multiLine = `
+        This is a multi-line string.
+        It can span across multiple lines
+        without the need for concatenation.
+        `;
+
+      // Expression in template literals
+      const a = 5;
+      const b = 10;
+      const sum = `The sum of ${a} and ${b} is ${a + b}.`;
+
+      // Displaying results
+      const output = document.getElementById('output');
+      output.innerHTML = `
+        <p>${greeting}</p>
+        <p>${multiLine}</p>
+        <p>${sum}</p>
+        `;
+  </script>
+</body>
+</html>

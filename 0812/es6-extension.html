@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>■■■ Cloud-Native Based DevOps Engineer Course ■■■</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          padding: 20px;
+      }
+
+      h1, h2 {
+          color: #333;
+      }
+
+      pre {
+          background-color: #f4f4f4;
+          padding: 10px;
+          border-radius: 5px;
+      }
+
+      .output {
+          margin-top: 10px;
+          font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+  <h1>ES6's Extension Feature</h1>
+  <h2>Object Methods and External Calling</h2>
+  <div id="output"></div>
+
+  <script>
+      function displayResult(title, result) {
+          const output = document.getElementById('output');
+          output.innerHTML += `
+                <h3>${title}</h3>
+                <pre>${result}</pre>
+            `;
+      }
+
+      // ES6 객체 메서드 정의
+      const calculator = {
+          add(a, b) {
+              return a + b;
+          },
+          subtract(a, b) {
+              return a - b;
+          },
+          multiply(a, b) {
+              return a * b;
+          },
+          divide(a, b) {
+              if (b !== 0) {
+                  return a / b;
+              } else {
+                  throw new Error("Cannot divide by zero");
+              }
+          }
+      };
+
+      // 1. 직접 호출
+      displayResult("1. 직접 호출", `calculator.add(5, 3) = ${calculator.add(5, 3)}`);
+
+      // 2. Destructuring을 사용한 호출
+      const {add, subtract, multiply, divide} = calculator;
+      displayResult("2. Destructuring을 사용한 호출", `
+subtract(10, 4) = ${subtract(10, 4)}
+multiply(3, 7) = ${multiply(3, 7)}`);
+
+      // 3. 함수 매개변수로 전달
+      function performOperation(operation, a, b) {
+          return operation(a, b);
+      }
+
+      displayResult("3. 함수 매개변수로 전달", `performOperation(divide, 20, 5) = ${performOperation(divide, 20, 5)}`);
+
+      // 4. 동적 메서드 이름 사용
+      const operationName = 'add';
+      displayResult("4. 동적 메서드 이름 사용", `calculator[operationName](8, 2) = ${calculator[operationName](8, 2)}`);
+
+      // 5. 메서드를 변수에 할당
+      const multiplyMethod = calculator.multiply;
+      displayResult("5. 메서드를 변수에 할당", `multiplyMethod(4, 6) = ${multiplyMethod(4, 6)}`);
+
+      // 추가: 화살표 함수와 this
+      const person = {
+          name: "John",
+          greet: function () {
+              setTimeout(() => {
+                  displayResult("6. 화살표 함수와 this", `Hello, my name is ${this.name}`);
+              }, 100);
+          }
+      };
+      person.greet();
+
+      // 추가: 객체 리터럴 확장
+      const propKey = "age";
+      const methodKey = "sayHi";
+      const obj = {
+          [propKey]: 30,
+          [methodKey]() {
+              return "Hi!";
+          }
+      };
+      displayResult("7. 객체 리터럴 확장", `
+obj.age = ${obj.age}
+obj.sayHi() = ${obj.sayHi()}`);
+  </script>
+</body>
+</html>

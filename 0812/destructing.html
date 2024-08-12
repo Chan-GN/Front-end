@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destructuring Assignment</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          padding: 20px;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      pre {
+          background-color: #f4f4f4;
+          padding: 10px;
+          border-radius: 5px;
+      }
+
+      .output {
+          margin-top: 20px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Destructuring Assignment</h1>
+  <div id="output"></div>
+
+  <script>
+      function displayResult(title, result) {
+          const output = document.getElementById('output');
+          output.innerHTML += `
+                <h3>${title}</h3>
+                <pre>${result}</pre>
+            `;
+      }
+
+      // Example 1: Array Destructuring
+      const fruits = ['apple', 'banana', 'orange'];
+      const [firstFruit, secondFruit, thirdFruit] = fruits;
+
+      displayResult('Array Destructuring', `
+fruits: ${fruits}
+firstFruit: ${firstFruit}
+secondFruit: ${secondFruit}
+thirdFruit: ${thirdFruit}
+        `);
+
+      // Example 2: Object Destructuring
+      const person = {name: 'John', age: 30, job: 'developer'};
+      const {name, age, job} = person;
+
+      displayResult('Object Destructuring', `
+person: ${JSON.stringify(person)}
+name: ${name}
+age: ${age}
+job: ${job}
+        `);
+
+      // Example 3: Nested Destructuring
+      const company = {
+          name: 'Tech Corp',
+          address: {
+              street: '123 Main St',
+              city: 'Tech City',
+              country: 'Techland'
+          }
+      };
+      const {name: companyName, address: {city}} = company;
+
+      displayResult('Nested Destructuring', `
+company: ${JSON.stringify(company)}
+companyName: ${companyName}
+city: ${city}
+        `);
+
+      // Example 4: Destructuring with Default Values
+      const [a, b, c = 3] = [1, 2];
+      const {x: x1, y = 20} = {x: 10};
+
+      displayResult('Destructuring with Default Values', `
+[a, b, c]: [${a}, ${b}, ${c}]
+{ x1, y }: { x1: ${x1}, y: ${y} }
+`);
+
+      // Example 5: Destructuring in Function Parameters
+      function printPersonInfo({name, age, job = 'unemployed'}) {
+          return `Name: ${name}, Age: ${age}, Job: ${job}`;
+      }
+
+      displayResult('Destructuring in Function Parameters', `
+printPersonInfo({ name: 'Alice', age: 25 }): ${printPersonInfo({name: 'Alice', age: 25})}
+printPersonInfo({ name: 'Bob', age: 30, job: 'teacher' }): ${printPersonInfo({name: 'Bob', age: 30, job: 'teacher'})}
+        `);
+
+      // Example 6: Swapping Variables
+      let m = 5, n = 10;
+      [m, n] = [n, m];
+
+      displayResult('Swapping Variables', `
+Before swap: m = 5, n = 10
+After swap: m = ${m}, n = ${n}
+`);
+
+      // Example 7: Rest in Destructuring
+      const [first, ...rest] = [1, 2, 3, 4, 5];
+
+      displayResult('Rest in Destructuring', `
+[first, ...rest] = [1, 2, 3, 4, 5]
+first: ${first}
+rest: ${rest}
+        `);
+  </script>
+</body>
+</html>
